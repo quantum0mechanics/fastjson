@@ -4,7 +4,7 @@ jdk:
 before_script:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
-  - mvn -B nondex:nondex
+  - mvn -B nondex:nondex | grep -iC 3 nondex
 branches:
   except:
     - appveyor
