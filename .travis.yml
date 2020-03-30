@@ -3,7 +3,6 @@ jdk:
   - openjdk8
 before_script:
   - echo $TRAVIS_COMMIT_RANGE; exit 1
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
   - mvn -B nondex:nondex |& grep -iC 3 nondex | tee -a detect_log
   - for f in $(grep file:/// detect_log | cut -f2 -d' '); do g=$(echo $f | cut -b8-); echo ==== $g ====; cat $g; echo; done
