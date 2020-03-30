@@ -2,6 +2,7 @@ language: java
 jdk:
   - openjdk8
 before_script:
+  - echo $TRAVIS_COMMIT_RANGE; exit 1
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
   - mvn -B nondex:nondex |& grep -iC 3 nondex | tee -a detect_log
