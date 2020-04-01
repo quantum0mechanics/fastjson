@@ -14,7 +14,7 @@ public class mytest extends TestCase {
     @Test
     public void mytest()
     {
-        HashSet<Object> test = new HashSet<>();
+        HashSet<Object> test = new HashSet<Object>();
         test.add(null);
         test.add("123 ");
         Iterator iter = test.iterator();
